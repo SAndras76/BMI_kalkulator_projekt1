@@ -24,7 +24,7 @@ public class BmiService {
         return entityManager.createQuery("select p from BmiModel p", BmiModel.class).getResultList();
     }
 
-    public double calculateBMI(Name name) {
+    public double calculateBMI(BmiModel bmiModel) {
 
         double height = BmiModel.getHeight();
         double weight = BmiModel.getKgs();
@@ -34,18 +34,20 @@ public class BmiService {
 
     public String getBMIStatus(double BMI) {
         if (BMI < 18) {
-            return ("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Híznia kellene！Ajánlhatok kalóriadús recepteket?");
+            return ("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Híznia kellene！Ajánlhatok kalóriadús recepteket?");
         } else if (BMI > 18 && BMI <= 25) {
-            return ("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Ön normál súllyal rendelkezik！");
+            return ("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Ön normál súllyal rendelkezik！");
         } else if (BMI > 25 && BMI <= 30) {
-            return ("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Enyhén túlsúlyos！:( Többet kellene edzeni, ajánljak edzéstervet? ");
+            return ("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Enyhén túlsúlyos！:( Többet kellene edzeni, ajánljak edzéstervet? ");
         } else if (BMI > 30 && BMI <= 35) {
-            return ("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Ez már kicsit sok lesz a kilókból！");
+            return ("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Ez már kicsit sok lesz a kilókból！");
         } else if (BMI > 35 && BMI <= 40) {
-            return("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Nagyon túlsúlyos, keressen fel egy orvost！Ajánlhatok orvost és recepteket?");
-        } else if (BMI > 40) {
-            return("\n Tips ： Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Jajjjaj..fogyni kéne ！ Ajánlhatok orvost? ");
+            return("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Nagyon túlsúlyos, keressen fel egy orvost！Ajánlhatok orvost és recepteket?");
+        } else  {
+            return("\n  Az Ön BMI értéke ：" + String.format("%.2f", BMI) + ", Jajjjaj..fogyni kéne ！ Ajánlhatok orvost? ");
+
 
         }
 
-}
+
+} }
