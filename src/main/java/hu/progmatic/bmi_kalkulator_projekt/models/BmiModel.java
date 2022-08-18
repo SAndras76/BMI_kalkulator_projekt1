@@ -64,7 +64,7 @@ public class BmiModel {
         this.name = name;
     }
 
-    public double getHeight() {
+    public static double getHeight() {
         return height;
     }
 
@@ -72,7 +72,7 @@ public class BmiModel {
         this.height = height;
     }
 
-    public double getKgs() {
+    public static double getKgs() {
         return kgs;
     }
 
