@@ -21,14 +21,14 @@ public class BmiModel {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate BmiDate;
-    private double BMI;
+    private double BMI = (getKgs()/(getHeight()*getHeight()));
 
     public BmiModel() {
 
     }
 
     public BmiModel(double BMI) {
-        this.BMI = (getKgs()/ (getHeight()*getHeight()));
+        this.BMI = BMI;
     }
 
     public BmiModel(long ID, String name, double height, double kgs, LocalDate bmiDate, double BMI) {
