@@ -64,7 +64,7 @@ public class BmiModel {
         this.name = name;
     }
 
-    public  double getHeight() {
+    public double getHeight() {
         return height;
     }
 

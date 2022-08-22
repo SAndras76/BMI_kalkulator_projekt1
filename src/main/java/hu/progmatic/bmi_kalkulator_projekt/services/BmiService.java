@@ -14,6 +14,7 @@ public class BmiService {
     @PersistenceContext
     EntityManager entityManager;
 
+
     @Transactional
     public boolean modelmanager(BmiModel bmiModel) {
         entityManager.persist(bmiModel);
@@ -26,8 +27,8 @@ public class BmiService {
 
     public double calculateBMI(BmiModel bmiModel) {
 
-        double height = BmiModel.getHeight();
-        double weight = BmiModel.getKgs();
+        double height = bmiModel.getHeight();
+        double weight = bmiModel.getKgs();
 
         return Math.ceil((weight / (height * height)));
     }

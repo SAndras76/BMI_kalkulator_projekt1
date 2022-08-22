@@ -4,18 +4,11 @@
 
 <body>
 
-<h1>Az ön eredménye:</h1>
+<h1>Az ön BMI eredménye:</h1>
 
-<form data-th-object="${newdata}" data-th-action="@{/result}" method="post">
+<p th:text="${caculateBMI}"></p>
+<a href="http://localhost:8080/newperson">Számoljon újra</a>
 
-
-    <label>BMI</label>
-    <br />
-    <input type="number" data-th-field="*{BMI}" placeholder="BMI érték"/>
-    <br />
-    <br />
-    <input type="submit" value="Számolás">
-</form>
 </body>
 
 

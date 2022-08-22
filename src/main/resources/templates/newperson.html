@@ -9,13 +9,13 @@
 
 <h1>Kérem az adatokat:</h1>
 
-<form data-th-object="${newdata}" data-th-action="@{/newperson}" method="post">
-    <input type="text" data-th-field="{name}" placeholder="Név" />
+<form data-th-object="${newdata}" data-th-action="@{/newperson}" method="post" action="result.html">
+    <input type="text" data-th-field="*{name}" placeholder="Név" />
     <br />
     <br />
     <label>Magasság</label>
     <br />
-    <input type="text" data-th-field="{height}" placeholder="Magasság" />
+    <input type="number" data-th-field="*{height}" placeholder="Magasság" />
     <br />
     <br />
     <label>Súly</label>
