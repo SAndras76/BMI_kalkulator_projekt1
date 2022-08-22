@@ -7,9 +7,10 @@
 
 <body>
 
+
 <h1>Kérem az adatokat:</h1>
 
-<form data-th-object="${newdata}" data-th-action="@{/newperson}" method="post" action="result.html">
+<form data-th-object="${newdata}" data-th-action="@{/result}" method="post" >
     <input type="text" data-th-field="*{name}" placeholder="Név" />
     <br />
     <br />

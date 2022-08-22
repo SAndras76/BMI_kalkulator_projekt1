@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("eredmenyek")
+
 public class BmiController {
 
     private BmiService bmiService;
@@ -23,11 +23,7 @@ public class BmiController {
         this.bmiService = bmiService;
     }
 
-    @GetMapping("eredmenyek")
-    public String displayEredmenyek(Model model){
-        model.addAttribute("eredmenyek", eredmenyek);
-                return "result";
-    }
+
     @GetMapping(value = "/newperson")
     public String MainPage (Model model) {
         BmiModel bmiModel = new BmiModel();
@@ -39,12 +35,15 @@ public class BmiController {
 
 
 
-
     @PostMapping(value = "/result")
-    public String eredmeny (@RequestParam String name, double height, double kgs ) {
-        //BmiModel bmiModel = new BmiModel();
-        //double calculateBMI = BmiService.;
-        eredmenyek.add(name);
+    public String eredmeny (BmiModel bmiModel, Model model) {
+
+        double heihtInMeter = bmiModel.getHeight()/100;
+        double resultBMI = bmiService.calculateBMI(bmiModel);
+        String status = bmiService.getBMIStatus(resultBMI);
+        //Math.ceil(bmiModel.getKgs() / (heihtInMeter * heihtInMeter));
+        model.addAttribute("calculateBMI", resultBMI);
+        model.addAttribute("status", status);
 
         return "result";
     }

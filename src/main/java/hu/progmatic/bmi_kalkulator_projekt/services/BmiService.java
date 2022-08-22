@@ -27,7 +27,7 @@ public class BmiService {
 
     public double calculateBMI(BmiModel bmiModel) {
 
-        double height = bmiModel.getHeight();
+        double height = bmiModel.getHeight()/100;
         double weight = bmiModel.getKgs();
 
         return Math.ceil((weight / (height * height)));
